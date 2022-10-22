@@ -305,4 +305,8 @@ color: gray;
     .larger-screen-menu, .large-screen-bottom-menu-wrapper{
         display: flex;
     }
+
+.search-container-wrapper{
+    block;
+}
 }
