@@ -21,7 +21,60 @@ let buttonLinkFive = document.querySelector(".bottom-link-five")
 let buttonLinkSix = document.querySelector(".bottom-link-six")
 let times = document.querySelector(".times");
 let searchContainerWrapper = document.querySelector(".search-container-wrapper");
-let bottomSearch = document.querySelector(".bottom-search")
+let bottomSearch = document.querySelector(".bottom-search");
+let left = document.querySelector(".fa-angle-left")
+let right = document.querySelector(".fa-angle-right")
+
+
+let sliderIndex = 0;
+plusSlides();
+
+function plusSlides(){
+    let images = document.getElementsByClassName("slider-images")
+    for(i = 0; i < images.length; i++){
+        images[i].style.display = "none"
+    }
+
+    sliderIndex++;
+    if(sliderIndex > images.length){
+        sliderIndex = 1;
+    }
+    images[sliderIndex - 1].style.display = "block";
+    setTimeout(plusSlides, 2000)
+ }
+
+
+
+
+ left.addEventListener("click", function(){
+     let slide = document.getElementsByClassName("slider-images");
+     sliderIndex += 1;
+     if (sliderIndex > slide.length){
+         sliderIndex = 1;
+     }
+
+     for (let i = 0; i < slide.length; i++){
+         slide[i].style.display = "none"
+     }
+     slide[sliderIndex - 1].style.display = "block";
+ })
+
+ right.addEventListener("click", function(){
+     let slide = document.getElementsByClassName("slider-images");
+
+     sliderIndex -= 1;
+     if(sliderIndex < 1){
+         sliderIndex = slide.length;
+     }
+     for(i = 0; i < slide.length; i++){
+         slide[i].style.display = "none";
+         slide[sliderIndex - 1].style.display = "block";
+     }
+     
+ })
+
+
+
 
 bottomSearch.addEventListener("click", ()=>{
     searchContainerWrapper.style.height = "100px";
@@ -35,6 +88,7 @@ bottomSearch.addEventListener("click", ()=>{
 times.addEventListener("click", ()=>{
     searchContainerWrapper.style.height = "0"
     searchContainerWrapper.style.overflow = "hidden";
+    times.style.display = none;
 })
 
 buttonLinkOne.addEventListener("click", ()=>{
