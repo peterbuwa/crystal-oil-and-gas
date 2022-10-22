@@ -4,6 +4,7 @@
     list-style-type: none; 
     text-decoration: none; 
     box-sizing: border-box;
+    font-family: ManifaPro2-Regular,Frutiger,Muna,Helvetica,Arial,sans-serif;
 }
 
             /* top menu starts here */
@@ -11,13 +12,16 @@
 .top-menu{
     display: flex;
     align-items: center;
-    width:70%;
+    width:50%;
 }
 
 .top-menu-wrapper {
     padding:10px;
     display: flex;
     align-items: center;
+    background-color: black;
+    color: white;
+    width:100%;
 }
 
 .hamburger {
@@ -31,8 +35,13 @@
 }
 
 .top-menu-image img{
-    width:130px;
-    height:40px;
+    width: 78px;
+height: 70px;
+}
+
+.top-menu-image{
+    display: flex; justify-content: end;
+    width:50%;
 }
 
 .top-menu-list {
@@ -61,10 +70,10 @@
 
 .search-icon {
     position: absolute;
-    right:25px;
-    top:10px;
-    font-size: 30px;
-    color: #4a4a4a;
+right: 61px;
+top: 10px;
+font-size: 25px;
+color: gray;
 }
 
 
@@ -111,10 +120,9 @@
                     /* large screen starts here */
 
 .large-screen-top-link-wrapper{
-    width:100%;
+    width:95%;
     display: flex;
     text-transform: capitalize;
-    width:90%;
     padding:10px 0;
     border-bottom: 1px dotted gray;
 }
@@ -130,6 +138,7 @@
     font-size: 16px;
     display: flex;
     justify-content: center;
+    
 }
 
 .large-screen-top-link, .large-screen-top-link-two{
@@ -138,11 +147,11 @@
 }
 
 .large-screen-top-link{
-    width:40%;
+    width:38%;
 }
 
 .large-screen-top-link-two{
-    width:60%
+    width:62%;
 }
 
 .large-screen-top-link p, .large-screen-top-link-two p{
@@ -155,6 +164,9 @@
 
 .large-screen-top-link a, .large-screen-top-link-two a{
     padding:0 10px;
+    color:blue;
+    white-space: nowrap;;
+
 }
 
 .large-screen-top-link a:hover, .large-screen-top-link-two a:hover{
@@ -168,16 +180,17 @@
     opacity:0.6;
     display: flex;
     justify-content: center;
-    align-items: center
-    ;
+    align-items: center;
 }
 
 .bottom-menu-search, .bottom-search{
     color:white;
 }
 
+.bottom-menu-link-one a {color:white;}
+
 .large-screen-bottom-menu {
-    width:90%;
+    width:100%;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -185,42 +198,111 @@
 
 .large-screen-bottom-menu-wrapper{
     display: flex; justify-content: center;
-    font-size: 15px;
+    font-size: 18px;
     align-items: center;
+    background-color: rgb(0,0,0)
 }
 
 .bottom-img a img {
-    width:140px; 
-    height:40px;
+    width: 110px;
+    height: 100px;
     margin: 0 0 0 5px;
 }
 
 .bottom-menu-link-one {
     padding:40px 5px;
-    background-color: blue;
     opacity: 0.6;
 }
 
 .bottom-menu-link-one a:hover{
-    text-decoration: underline;
+   text-decoration: underline;
 }
 
 .bottom-menu-search{
-    margin:0 5px 0 0;;
+    margin:0 5px 0 0;
 }
 
 .bottom-menu-link-one a{
-    color:white;
+    color:wblue;
     word-spacing: -1px;
+}
+
+.search-container {
+    width: 100%;
+}
+
+#search-input{
+    width:90%;
+    padding:0 10px;
+}
+
+.search-container-wrapper {
+    /* padding:10px; */
+    background-color: #007eac;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 0;
+    /* overflow: hidden; */
+    transition: .5s;
+}
+
+.search-span{
+    background-color: white;
+    margin: 0 0 0 5px;
+    color:blue;
+    padding:13px 5px;
+}
+
+.search-span:hover{
+    background-color: rgb(180,180,180);
+    margin: 0 0 0 5px;
+    color:blue;
+    padding:13px 5px;
+}
+
+.larger-screen-menu, .large-screen-bottom-menu-wrapper, .search-container-wrapper{
+    display: none;
+}
+
+.times {
+    position:absolute;
+    font-size: 40px;
+    right: 120px;
+    top:-5px;
+    cursor: pointer;
 }
 
 
 
 
+@keyframes height{
+    0%{height:0;}
+    100%{height:100%;}
+}
 
+@media screen and (min-width:420px){
+    .search-icon {
+        right: 81px;
+        top: 10px;
+      }
+}
 
+@media screen and (min-width:620px){
+    .search-icon {
+        right: 101px;
+        top: 10px;
+      }
 
+      .top-menu-wrapper {
+        padding: 10px 20px;
+      }
+}
 
 @media screen and (min-width:856px){
     .overall-wrapper{display: none;}
+    .larger-screen-menu, .large-screen-bottom-menu-wrapper{
+        display: flex;
+    }
 }
